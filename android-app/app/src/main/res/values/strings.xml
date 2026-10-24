@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Bubu &amp; Dudu Wallpapers</string>
+    <string name="subtitle">Official Kawaii HD Theme Pack</string>
+    <string name="set_home">Set Home Screen</string>
+    <string name="set_lock">Set Lock Screen</string>
+    <string name="set_both">Set Both Screens</string>
+    <string name="tab_all">All Wallpapers</string>
+    <string name="tab_mobile">Mobile 9:16</string>
+    <string name="tab_desktop">Desktop 16:9</string>
+    <string name="wallpaper_applied">✨ Wallpaper applied successfully! ✨</string>
+</resources>

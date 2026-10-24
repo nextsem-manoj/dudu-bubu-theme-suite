@@ -1,0 +1,32 @@
+[Theme]
+DisplayName=Bubu & Dudu Kawaii Theme
+ThemeId={A76E2A34-3A29-41C2-825B-4C042BCDF881}
+
+[Control Panel\Desktop]
+Wallpaper=DesktopBackground\01_bubu_dudu_picnic.jpg
+Pattern=
+MultimonBackgrounds=0
+PicturePosition=4
+WallpaperStyle=10
+
+[Slideshow]
+Interval=1800000
+Shuffle=1
+ImagesRootPath=DesktopBackground
+Item0Path=DesktopBackground\01_bubu_dudu_picnic.jpg
+Item1Path=DesktopBackground\02_bubu_dudu_movie_night.jpg
+Item2Path=DesktopBackground\03_bubu_dudu_sticker_collage.jpg
+Item3Path=DesktopBackground\04_bubu_dudu_strawberries.jpg
+Item4Path=DesktopBackground\05_bubu_dudu_gaming.jpg
+
+[VisualStyles]
+Path=%ResourceDir%\Themes\Aero\Aero.msstyles
+ColorStyle=NormalColor
+Size=NormalSize
+ColorizationColor=0XC4FF8FA3
+AutoColorization=0
+SystemMode=Light
+AppMode=Light
+
+[MasterThemeSelector]
+MTSM=DABBrowser

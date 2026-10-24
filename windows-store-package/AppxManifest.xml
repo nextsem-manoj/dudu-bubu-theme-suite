@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+         xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
+         xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+         xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
+         xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities">
+  <Identity Name="Nextsem.BubuandDuduThemePack"
+            Publisher="CN=7CDD46F1-E4CE-48BE-98E1-E02A392EF228"
+            Version="1.0.0.0"
+            ProcessorArchitecture="neutral" />
+  <Properties>
+    <DisplayName>Bubu and Dudu Theme Pack</DisplayName>
+    <PublisherDisplayName>Nextsem</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+    <Description>Experience cuteness overload with the official Bubu and Dudu Theme Pack! Includes adorable HD 4K desktop wallpapers featuring Bubu the panda and Dudu the bear in heartwarming scenes, complete with custom pastel accent colors.</Description>
+  </Properties>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.17763.0" MaxVersionTested="10.0.22631.0" />
+  </Dependencies>
+  <Resources>
+    <Resource Language="en-US" />
+  </Resources>
+  <Applications>
+    <Application Id="App"
+                 Executable="ThemeInstaller.exe"
+                 EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements DisplayName="Bubu and Dudu Theme Pack"
+                          Description="Adorable Bubu &amp; Dudu Wallpapers &amp; Theme"
+                          BackgroundColor="#FFE4E1"
+                          Square150x150Logo="Assets\Square150x150Logo.png"
+                          Square44x44Logo="Assets\Square44x44Logo.png">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" />
+        <uap:SplashScreen Image="Assets\SplashScreen.png" />
+      </uap:VisualElements>
+      <Extensions>
+        <uap3:Extension Category="windows.desktopWallpaper">
+          <uap3:DesktopWallpaper ThemeName="BubuAndDudu"
+                                 ThemeFile="Theme\BubuAndDudu.theme" />
+        </uap3:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+</Package>

@@ -1,0 +1,22 @@
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+setup.inf
+setup.rpt
+theme.ddf
+
+# Android build outputs & local config
+.gradle/
+build/
+app/build/
+*.iml
+.idea/
+local.properties
+.cxx/
+
+# VS Code / IDE
+.vscode/
+.antigravity/
