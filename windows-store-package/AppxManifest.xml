@@ -21,9 +21,7 @@
     <Resource Language="en-US" />
   </Resources>
   <Applications>
-    <Application Id="App"
-                 Executable="ThemeInstaller.exe"
-                 EntryPoint="Windows.FullTrustApplication">
+    <Application Id="App">
       <uap:VisualElements DisplayName="Bubu and Dudu Theme Pack"
                           Description="Adorable Bubu &amp; Dudu Wallpapers &amp; Theme"
                           BackgroundColor="#FFE4E1"
