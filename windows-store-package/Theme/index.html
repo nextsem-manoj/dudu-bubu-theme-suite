@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bubu & Dudu Kawaii Theme Suite - Preview & Gallery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #FF7E94;
+      --primary-light: #FFB3C1;
+      --bg-cream: #FFF7F0;
+      --bg-card: #FFFFFF;
+      --text-dark: #3E2F28;
+      --text-muted: #8A756D;
+      --accent-gold: #FFC043;
+      --shadow-soft: 0 12px 32px rgba(255, 126, 148, 0.15);
+      --shadow-hover: 0 16px 40px rgba(255, 126, 148, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(135deg, #FFF7F0 0%, #FFEBEF 50%, #FFF3EC 100%);
+      color: var(--text-dark);
+      min-height: 100vh;
+      padding: 30px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Hero Banner */
+    .hero {
+      background: white;
+      border-radius: 28px;
+      padding: 32px;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 40px;
+      border: 3px solid #FFE4E8;
+    }
+
+    .hero-banner-img {
+      flex: 1 1 500px;
+      max-width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+
+    .hero-banner-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .hero-banner-img:hover img {
+      transform: scale(1.02);
+    }
+
+    .hero-content {
+      flex: 1 1 400px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #FFE4E8;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: #38241D;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    p.subtitle {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .quick-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary);
+      color: white;
+      padding: 12px 22px;
+      border-radius: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 6px 18px rgba(255, 126, 148, 0.35);
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+      font-size: 0.95rem;
+    }
+
+    .btn:hover {
+      background: #FF6680;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(255, 126, 148, 0.45);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--text-dark);
+      border: 2px solid #FFD5DC;
+      box-shadow: none;
+    }
+
+    .btn-secondary:hover {
+      background: #FFF0F3;
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    /* Section Headers */
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      font-size: 1rem;
+    }
+
+    /* Grid Layouts */
+    .desktop-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 24px;
+      margin-bottom: 50px;
+    }
+
+    .mobile-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-bottom: 50px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      border: 2px solid #FFF0F2;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      border-color: #FFCCD5;
+    }
+
+    .card-preview {
+      width: 100%;
+      background: #FDF4F0;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .card-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .card-preview:hover img {
+      transform: scale(1.04);
+    }
+
+    .card-body {
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .card-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text-dark);
+    }
+
+    .card-info {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+
+    .card-action {
+      display: flex;
+      gap: 8px;
+    }
+
+    /* Store Assets showcase */
+    .assets-box {
+      background: white;
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: var(--shadow-soft);
+      border: 2px solid #FFE4E8;
+      margin-bottom: 50px;
+    }
+
+    .assets-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .icon-preview {
+      width: 120px;
+      height: 120px;
+      border-radius: 26px;
+      box-shadow: 0 8px 24px rgba(255,126,148,0.25);
+      border: 3px solid white;
+      overflow: hidden;
+    }
+
+    .icon-preview img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* Modal / Lightbox */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(45, 29, 25, 0.85);
+      backdrop-filter: blur(8px);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+
+    .modal-content img {
+      max-width: 90vw;
+      max-height: 85vh;
+      object-fit: contain;
+      display: block;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2.5rem;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.2s ease;
+    }
+
+    .modal-close:hover {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Hero Header -->
+    <header class="hero">
+      <div class="hero-content">
+        <span class="badge">🌸 Complete Theme Suite (9 Wallpapers) 🌸</span>
+        <h1>Bubu &amp; Dudu Kawaii Theme Pack</h1>
+        <p class="subtitle">
+          Crafted from your sticker illustrations and trending search scenes! High-definition desktop &amp; mobile wallpapers, Windows Theme installer with 30-min slideshow, Microsoft Store MSIX package, and Android Play Store project.
+        </p>
+        <div class="quick-actions">
+          <a href="windows-theme/BubuAndDudu.deskthemepack" class="btn" download>
+            💻 Download Windows Theme (.deskthemepack)
+          </a>
+          <a href="#mobile-section" class="btn btn-secondary">
+            📱 View Mobile Wallpapers
+          </a>
+        </div>
+      </div>
+      <div class="hero-banner-img">
+        <img src="store-assets/feature_graphic_1024x500.jpg" alt="Bubu and Dudu Theme Pack Feature Graphic" onclick="openLightbox(this.src)">
+      </div>
+    </header>
+
+    <!-- Desktop Wallpapers (16:9) -->
+    <section>
+      <h2 class="section-title">🖥️ PC Desktop Wallpapers (16:9 Widescreen)</h2>
+      <p class="section-desc">Included in your Windows `.deskthemepack` file with dynamic slideshow and custom pastel blush theme colors.</p>
+      
+      <div class="desktop-grid">
+        <!-- Item 1 -->
+        <div class="card">
+          <div class="card-preview" onclick="openLightbox('windows-theme/wallpapers/01_bubu_dudu_picnic.jpg')">
+            <img src="windows-theme/wallpapers/01_bubu_dudu_picnic.jpg" alt="Picnic & Boba Tea">
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Desktop Wallpaper 01</span>
+            <h3 class="card-title">Picnic &amp; Boba Tea</h3>
+            <p class="card-info">Bubu and Dudu happily sharing boba tea, cookies, and sweet moments under cherry blossom trees.</p>
+            <div class="card-action">
+              <a href="windows-theme/wallpapers/01_bubu_dudu_picnic.jpg" class="btn" download>Download HD</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="card">
+          <div class="card-preview" onclick="openLightbox('windows-theme/wallpapers/02_bubu_dudu_movie_night.jpg')">
+            <img src="windows-theme/wallpapers/02_bubu_dudu_movie_night.jpg" alt="Cozy Movie Night">
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Desktop Wallpaper 02</span>
+            <h3 class="card-title">Cozy Movie Night</h3>
+            <p class="card-info">Snuggled under a soft warm blanket with popcorn and cocoa under glowing fairy lights.</p>
+            <div class="card-action">
+              <a href="windows-theme/wallpapers/02_bubu_dudu_movie_night.jpg" class="btn" download>Download HD</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="card">
+          <div class="card-preview" onclick="openLightbox('windows-theme/wallpapers/03_bubu_dudu_sticker_collage.jpg')">
+            <img src="windows-theme/wallpapers/03_bubu_dudu_sticker_collage.jpg" alt="Combined Sticker Collage">
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Desktop Wallpaper 03 (Combined)</span>
+            <h3 class="card-title">Sticker Moments Collage</h3>
+            <p class="card-info">Combining all your favorite sticker poses: chef cooking, pizza party, scooter ride, umbrella in rain, hugs, and selfies!</p>
+            <div class="card-action">
+              <a href="windows-theme/wallpapers/03_bubu_dudu_sticker_collage.jpg" class="btn" download>Download HD</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4 (New) -->
+        <div class="card">
+          <div class="card-preview" onclick="openLightbox('windows-theme/wallpapers/04_bubu_dudu_strawberries.jpg')">
+            <img src="windows-theme/wallpapers/04_bubu_dudu_strawberries.jpg" alt="Strawberry Shortcake Cafe">
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Desktop Wallpaper 04 (Search Scene)</span>
+            <h3 class="card-title">Strawberry Shortcake Cafe</h3>
+            <p class="card-info">Feeding each other fresh juicy strawberries and strawberry shortcake in an adorable pastel cafe.</p>
+            <div class="card-action">
+              <a href="windows-theme/wallpapers/04_bubu_dudu_strawberries.jpg" class="btn" download>Download HD</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 5 (New) -->
+        <div class="card">
+          <div class="card-preview" onclick="openLightbox('windows-theme/wallpapers/05_bubu_dudu_gaming.jpg')">
+            <img src="windows-theme/wallpapers/05_bubu_dudu_gaming.jpg" alt="Cozy Kitty Headset Gaming">
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Desktop Wallpaper 05 (Search Scene)</span>
+            <h3 class="card-title">Kitty Headset Gaming Night</h3>
+            <p class="card-info">Cozy gaming together wearing kitty-ear headsets, playing Player 1 & Player 2 with snacks and pixel hearts.</p>
+            <div class="card-action">
+              <a href="windows-theme/wallpapers/05_bubu_dudu_gaming.jpg" class="btn" download>Download HD</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mobile Wallpapers (9:16) -->
+    <section id="mobile-section">
+      <h2 class="section-title">📱 Mobile Phone Wallpapers (9:16 Lockscreen &amp; Homescreen)</h2>
+      <p class="section-desc">Tailored for Android and iPhone screens with soft pastel backgrounds that leave room for your clock and widgets.</p>
+
+      <div class="mobile-grid">
+        <!-- Mobile 1 -->
+        <div class="card">
+          <div class="card-preview" style="height: 380px;" onclick="openLightbox('mobile-wallpapers/mobile_01_sweet_friends.jpg')">
+            <img src="mobile-wallpapers/mobile_01_sweet_friends.jpg" alt="Sweet Friends Forever">
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Mobile Wallpaper 01</span>
+            <h3 class="card-title">Sweet Friends Forever</h3>
+            <p class="card-info">Holding hands with rosy cheeks and floating hearts on a creamy gradient background.</p>
+            <div class="card-action">
+              <a href="mobile-wallpapers/mobile_01_sweet_friends.jpg" class="btn" download>Download 9:16</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile 2 -->
+        <div class="card">
+          <div class="card-preview" style="height: 380px;" onclick="openLightbox('mobile-wallpapers/mobile_02_selfie_time.jpg')">
+            <img src="mobile-wallpapers/mobile_02_selfie_time.jpg" alt="Selfie Time">
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Mobile Wallpaper 02</span>
+            <h3 class="card-title">Cute Selfie Time</h3>
+            <p class="card-info">Dudu &amp; Bubu taking a sweet selfie with cute matching sweaters and pastel stars.</p>
+            <div class="card-action">
+              <a href="mobile-wallpapers/mobile_02_selfie_time.jpg" class="btn" download>Download 9:16</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile 3 (New) -->
+        <div class="card">
+          <div class="card-preview" style="height: 380px;" onclick="openLightbox('mobile-wallpapers/mobile_03_bedtime_cuddle.jpg')">
+            <img src="mobile-wallpapers/mobile_03_bedtime_cuddle.jpg" alt="Starry Bedtime Cuddle">
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Mobile Wallpaper 03 (Search Scene)</span>
+            <h3 class="card-title">Starry Bedtime Cuddle</h3>
+            <p class="card-info">Curled up in striped pajamas hugging mini star plushies under a cloud duvet and smiling moon.</p>
+            <div class="card-action">
+              <a href="mobile-wallpapers/mobile_03_bedtime_cuddle.jpg" class="btn" download>Download 9:16</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile 4 (New) -->
+        <div class="card">
+          <div class="card-preview" style="height: 380px;" onclick="openLightbox('mobile-wallpapers/mobile_04_frog_hats.jpg')">
+            <img src="mobile-wallpapers/mobile_04_frog_hats.jpg" alt="Froggy Raincoat Friends">
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Mobile Wallpaper 04 (Search Scene)</span>
+            <h3 class="card-title">Froggy Raincoat Friends</h3>
+            <p class="card-info">Wearing matching frog bucket hats and yellow raincoats with little yellow daisies under a rainbow.</p>
+            <div class="card-action">
+              <a href="mobile-wallpapers/mobile_04_frog_hats.jpg" class="btn" download>Download 9:16</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- App Store Assets -->
+    <section>
+      <h2 class="section-title">🏬 App Store &amp; Marketplace Assets</h2>
+      <p class="section-desc">Ready for direct upload to Microsoft Store and Google Play Console.</p>
+
+      <div class="assets-box">
+        <div class="assets-row">
+          <div class="icon-preview">
+            <img src="store-assets/icon_512x512.png" alt="512x512 App Icon">
+          </div>
+          <div style="flex: 1 1 300px;">
+            <h3 style="font-family: 'Outfit'; font-size: 1.3rem; margin-bottom: 6px;">512x512 Master App Icon</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px;">
+              High-resolution badge icon matching Google Play Store 512x512 PNG specification and Windows Store requirements.
+            </p>
+            <a href="store-assets/icon_512x512.png" class="btn btn-secondary" download>Download Icon PNG</a>
+          </div>
+          <div style="flex: 1 1 300px;">
+            <h3 style="font-family: 'Outfit'; font-size: 1.3rem; margin-bottom: 6px;">1024x500 Feature Banner</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px;">
+              Promotional showcase graphic required by Google Play Console and Windows Partner Center.
+            </p>
+            <a href="store-assets/feature_graphic_1024x500.jpg" class="btn btn-secondary" download>Download Banner JPG</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div class="modal" id="lightboxModal" onclick="closeLightbox()">
+    <span class="modal-close">&times;</span>
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <img id="lightboxImg" src="" alt="Enlarged Preview">
+    </div>
+  </div>
+
+  <script>
+    function openLightbox(src) {
+      document.getElementById('lightboxImg').src = src;
+      document.getElementById('lightboxModal').classList.add('active');
+    }
+    function closeLightbox() {
+      document.getElementById('lightboxModal').classList.remove('active');
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+</body>
+</html>
